@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 
 public class AkkaFsmApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ActorSystem actorSystem = ActorSystem.create("ProcessDispatcherSystem");
+        ActorSystem actorSystem = ActorSystem.create("ProcessDispatcherSystem");
 
         ProcessExecutorAdapter processExecutorAdapter = new ProcessExecutorAdapter();
 
@@ -41,5 +41,5 @@ public class AkkaFsmApplication {
                 1000L,
                 TimeUnit.MILLISECONDS
         );
-	}
+    }
 }

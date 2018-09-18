@@ -31,7 +31,8 @@ public class ProcessExecutorAdapter {
 
     /**
      * Запускает экземпляр процесса
-     * @param processParam значение параметра процесса
+     *
+     * @param processParam  значение параметра процесса
      * @param executorParam значение параметра исполнителя
      * @return идентификатор экземпляра процесса (id)
      */
@@ -43,18 +44,18 @@ public class ProcessExecutorAdapter {
 
     /**
      * Вычисляет текущий статус экземпляра процесса
+     *
      * @param id идентификатор экземпляра процесса
      * @return статус процесса
      */
     public ProcessStatus checkProcessStatus(String id) {
         Process process = processMap.getOrDefault(id, null);
-        if(process == null) {
+        if (process == null) {
             return new ProcessFinished();
         }
-        if(process.createTime + process.duration > System.currentTimeMillis()) {
+        if (process.createTime + process.duration > System.currentTimeMillis()) {
             return new ProcessInProgress();
-        }
-        else {
+        } else {
             processMap.remove(id);
             return new ProcessFinished();
         }

@@ -6,7 +6,8 @@ import akka.japi.pf.FI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import research.akkafsm.actor.message.*;
-import research.akkafsm.actor.state.*;
+import research.akkafsm.actor.state.ProcessData;
+import research.akkafsm.actor.state.ProcessState;
 
 import java.time.Duration;
 import java.util.Arrays;

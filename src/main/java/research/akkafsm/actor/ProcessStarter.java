@@ -21,8 +21,7 @@ public class ProcessStarter extends AbstractActor {
                         String id = processExecutorAdapter.startProcess(message.processParam, message.executorParam);
                         ProcessStarted successMessage = new ProcessStarted(id);
                         getSender().tell(successMessage, getSelf());
-                    }
-                    catch (Throwable error) {
+                    } catch (Throwable error) {
                         ProcessFailure failureMessage = new ProcessFailure(error);
                         getSender().tell(failureMessage, getSelf());
                     }

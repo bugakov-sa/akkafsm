@@ -20,8 +20,7 @@ public class ProcessChecker extends AbstractActor {
                     try {
                         ProcessStatus successMessage = processExecutorAdapter.checkProcessStatus(message.id);
                         getSender().tell(successMessage, getSelf());
-                    }
-                    catch (Throwable error) {
+                    } catch (Throwable error) {
                         ProcessInProgress failureMessage = new ProcessInProgress();
                         getSender().tell(failureMessage, getSelf());
                     }
